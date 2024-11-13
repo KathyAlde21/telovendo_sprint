@@ -28,14 +28,6 @@ LIMIT 5;
 
 -- // -------------------------------------------------------------------------------------------------
 -- Cambie la categoría de productos más popular por ‘Electrónica y computación’
--- cuando cree las tablas coloque VARCHAR(20) y no alcanza para guardar el nuevo nombre, hice cambio de eso primero
-ALTER TABLE proveedores
-MODIFY COLUMN categoria_producto VARCHAR(50); -- antes solo 20
-
-ALTER TABLE productos
-MODIFY COLUMN categoria VARCHAR(50); -- antes solo 20
-
--- ahora puedo realizar el cambio de nombre
 UPDATE proveedores
 SET categoria_producto = 'Electrónica y computación'
 WHERE categoria_producto = 'Tecnologia';
